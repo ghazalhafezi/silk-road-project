@@ -4,55 +4,112 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="ورود به سایت راه ابریشم">
+  <meta name="theme-color" content="#0b0d12">
   <title>ورود به سایت راه ابریشم</title>
   <style>
     * { box-sizing: border-box; }
+    html { color-scheme: dark; }
     body {
       margin: 0;
       min-height: 100vh;
+      min-height: 100dvh;
       display: grid;
       place-items: center;
       padding: 24px;
-      background: #f5f6f8;
-      color: #20242c;
-      font-family: Tahoma, Arial, sans-serif;
+      color: #eef0f5;
+      font-family: Vazirmatn, Tahoma, "Segoe UI", Arial, sans-serif;
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(212, 169, 98, .16), transparent 60%),
+        radial-gradient(700px 450px at 0% 110%, rgba(99, 102, 241, .14), transparent 60%),
+        #0b0d12;
     }
     main {
-      width: min(100%, 520px);
-      padding: 36px 28px;
+      position: relative;
+      width: min(100%, 480px);
+      padding: 44px 32px 36px;
       text-align: center;
-      background: #fff;
-      border: 1px solid #e7e9ee;
+      background: linear-gradient(180deg, rgba(255,255,255,.055), rgba(255,255,255,.02));
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, .55), inset 0 1px 0 rgba(255,255,255,.06);
+      animation: rise .6s ease both;
+    }
+    .mark {
+      width: 56px;
+      height: 56px;
+      margin: 0 auto 22px;
+      display: grid;
+      place-items: center;
       border-radius: 16px;
-      box-shadow: 0 8px 30px rgba(20, 30, 50, .06);
+      font-size: 26px;
+      color: #d4a962;
+      background: rgba(212, 169, 98, .1);
+      border: 1px solid rgba(212, 169, 98, .3);
     }
     h1 {
-      margin: 0 0 24px;
-      font-size: clamp(20px, 5vw, 26px);
-      font-weight: 700;
-      line-height: 1.8;
-    }
-    a {
-      display: inline-block;
-      padding: 13px 24px;
-      border-radius: 10px;
-      background: #1d4ed8;
-      color: #fff;
-      font-size: 17px;
+      margin: 0 0 12px;
+      font-size: clamp(22px, 6vw, 28px);
+      font-weight: 800;
       line-height: 1.7;
-      text-decoration: none;
+      letter-spacing: -.01em;
     }
-    a:focus-visible {
-      outline: 3px solid #93c5fd;
+    .notice {
+      margin: 0 0 30px;
+      padding: 12px 14px;
+      font-size: 15px;
+      line-height: 1.9;
+      color: #e9d3a6;
+      background: rgba(212, 169, 98, .08);
+      border: 1px solid rgba(212, 169, 98, .22);
+      border-radius: 12px;
+    }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 24px;
+      border-radius: 14px;
+      background: #f4f5f8;
+      color: #0b0d12;
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.6;
+      text-decoration: none;
+      box-shadow: 0 10px 30px rgba(244, 245, 248, .12);
+      transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+    }
+    .btn svg { transition: transform .18s ease; }
+    .btn:hover {
+      background: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 36px rgba(244, 245, 248, .2);
+    }
+    .btn:hover svg { transform: translateX(-4px); }
+    .btn:active { transform: translateY(0); }
+    .btn:focus-visible {
+      outline: 3px solid #d4a962;
       outline-offset: 4px;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      main { animation: none; }
+      .btn, .btn svg { transition: none; }
     }
   </style>
 </head>
 <body>
   <main>
+    <div class="mark" aria-hidden="true">✦</div>
     <h1>ورود به سایت راه ابریشم</h1>
-    <a href="https://alighamsarimusic.com/silkroad">
-      ورود به سایت راه ابریشم
+    <p class="notice">فیلتر شکن خود را خاموش کنید و وارد سایت شوید.</p>
+    <a class="btn" href="https://alighamsarimusic.com/silkroad">
+      ورود به سایت
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg>
     </a>
   </main>
 </body>
